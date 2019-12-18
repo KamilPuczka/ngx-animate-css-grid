@@ -1,0 +1,9 @@
+{
+  "name": "ng-animate-css-grid",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14",
+    "animate-css-grid": "^1.4.3"
+  }
+}
