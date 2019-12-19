@@ -1,24 +1,84 @@
 # NgxAnimateCssGrid
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
+Angular wrapper for [animate-css-grid](https://github.com/aholachek/animate-css-grid)
 
-## Code scaffolding
+## Installing and usage
 
-Run `ng generate component component-name --project ngx-animate-css-grid` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-animate-css-grid`.
-> Note: Don't forget to add `--project ngx-animate-css-grid` or else it will be added to the default project in your `angular.json` file. 
+```
+npm install --save animate-css-grid
+npm install --save ngx-animate-css-grid
+```
 
-## Build
+**Usage**
 
-Run `ng build ngx-animate-css-grid` to build the project. The build artifacts will be stored in the `dist/` directory.
+Load the module for your app
+```javascript
+import { NgxAnimateCssGridModule } from 'ngx-animate-css-grid';
 
-## Publishing
+@NgModule({
+  ...
+  imports: [
+    ...
+    NgxAnimateCssGridModule
+  ]
+})
+```
 
-After building your library with `ng build ngx-animate-css-grid`, go to the dist folder `cd dist/ngx-animate-css-grid` and run `npm publish`.
+Use directive in you component template
 
-## Running unit tests
+```html
+<!-- grid class -->
+<ul class="some-grid-class-that-changes" ngxAnimateCssGrid>
+  <li class="grid-item">
+    <!-- each grid item must have a single direct child -->
+    <div>
+      <h3>Item title</h3>
+      <div>Item body</div>
+    </div>
+  </li>
+<div>
 
-Run `ng test ngx-animate-css-grid` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+You can provide optional config and listen to events:
 
-## Further help
+```html
+<!-- grid class -->
+<ul class="some-grid-class-that-changes" [ngxAnimateCssGrid]="config" (onStart)="onStart($event)" (onEnd)="onEnd($event)">
+  <li class="grid-item">
+    <!-- each grid item must have a single direct child -->
+    <div>
+      <h3>Item title</h3>
+      <div>Item body</div>
+    </div>
+  </li>
+<div>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+
+Available configuration options:
+
+```
+{
+  // int: default is 0 ms
+  stagger: 100,
+  // int: default is 250 ms
+  duration: 500
+  // string: default is 'easeInOut'
+  easing: 'backInOut',
+}
+```
+
+Events
+
+```javascript
+(onStart)           // called with list of HTMLElements about to animate
+(onEnd)             // called with list of HTMLElements that just finished animating
+```
+
+ Helper functions available through the directive reference 
+ ```javascript
+ forceGridAnimation()          // use it to force update after inline style changes
+ unwrapGrid()                  // remove animations but not the grid itself
+ ```
+
+For more detailed documentation with all the supported options see: [animate-css-grid](https://github.com/aholachek/animate-css-grid)
