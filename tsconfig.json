@@ -19,11 +19,11 @@
       "dom"
     ],
     "paths": {
-      "ng-animate-css-grid": [
-        "dist/ng-animate-css-grid"
+      "ngx-animate-css-grid": [
+        "dist/ngx-animate-css-grid"
       ],
-      "ng-animate-css-grid/*": [
-        "dist/ng-animate-css-grid/*"
+      "ngx-animate-css-grid/*": [
+        "dist/ngx-animate-css-grid/*"
       ]
     }
   },
