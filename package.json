@@ -1,6 +1,25 @@
 {
   "name": "ngx-animate-css-grid",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "description": "Angular wrapper for animate-css-grid",
+  "homepage": "https://github.com/KamilPuczka/ngx-animate-css-grid",
+  "keywords": [
+    "angular",
+    "css",
+    "grid",
+    "animation",
+    "ng",
+    "ngx",
+    "transition",
+    "mutation-observer",
+    "layout"
+  ],
+  "author": "Kamil Puczka",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KamilPuczka/ngx-animate-css-grid"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
